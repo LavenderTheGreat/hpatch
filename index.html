@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>'H'Patch</title>
+		<link rel="stylesheet" href="https://unpkg.com/chota@latest">
+		<link rel="stylesheet" href="https://anydir.github.io/styles/index.css">
+		<link rel="stylesheet" href="index.css">
+		<script src="index.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/fast-xml-parser/3.16.0/parser.min.js"></script>
+		<script src="FileSaver.js"></script>
+	</head>
+	<body>
+		<div class="container">
+			<div class="row">
+				<div class="col-12" style="font-size: 10rem; text-align:center;">▽</div>
+			</div>
+			<div class="row">
+				<div class="col-12 anydir-logo">HPATCH</div>
+			</div>
+			<div class="row">
+				<div class="col-12" style="text-align:center"><div class="djh-main">The H is short for Hero btw</div><br>A tool for patching various DJ Hero 2 XMLs.</div>
+			</div>
+			
+			<!--  -->
+			<div class="row djh-main">
+				<div class="col-12">
+					Currently has various tweaks for the global variable XML file, which allows various tweaks to gameplay, display and audio effects.
+					<br>
+					<br>
+					XML file to patch:
+					<br>
+					<input type="file" id="input" name="input" accept="text/xml">
+					<br>
+				</div>
+			</div>
+			
+			<!-- Global Attributes Editor -->
+			<div class="row djh-main">
+				<div class="col-12">
+
+					<!-- In-game -->
+
+					<h1>In-Game</h1>
+					DivideMod (For Deckspeed)<input type="ga_ig_dividemod" id="ga_ig_dividemod" name="input" value="2">
+					<br>
+
+					<div class="smalltext">
+						DivideMod is similar to xmod but divides instead of multiplies deck speed. It defaults to half speed (2), so to get an xmod from it you can do 2 divided by your desired xmod.
+						<br>
+						<i>Float</i>
+					</div>
+					<br>
+
+					Highway width<input type="number" id="ga_ig_highwaywidth" name="ga_ig_highwaywidth" value="-1.5">
+					<br>
+					<div class="smalltext">
+						Highway width <b>does not work as one would expect.</b> Lane widths are constrained by the full width of the lane itself, so stretching it can cause weird artifacts.
+						<br>
+						<i>Float</i>
+					</div>
+					<br>
+
+					<input type="checkbox" id="ga_ig_cpdebug" name="ga_ig_cpdebug"> Use checkpoint debug
+					<br>
+					<div class="smalltext">
+						Checkpoint debug shows a dialog similar to judge display in games like Etterna next to the lane. It shows live hit percents and the judgements obtained.
+						<br>
+						<i>Boolean</i>
+					</div>
+					<br>
+					
+					<input type="checkbox" id="ga_ig_flipleft" name="ga_ig_flipleft"> Flip deck (Buttons left)
+					<br><br>
+					<input type="checkbox" id="ga_ig_flipright" name="ga_ig_flipright"> Flip deck (Buttons right)
+					<br>
+					<div class="smalltext">
+						Flips the deck for various button configurations.
+						<br>
+						<i>Boolean</i>
+					</div>
+
+					<!-- Audio -->
+
+					<h1>Audio</h1>
+					<input type="checkbox" id="ga_au_freestyle" name="ga_au_freestyle" checked=true> Allow freestyle samples
+					<br>
+					<div class="smalltext">
+						Checkpoint debug shows a dialog similar to judge display in games like Etterna next to the lane. It shows live hit percents and the judgements obtained.
+						<br>
+						<i>Boolean</i>
+					</div>
+
+					<!-- Menu -->
+
+					<h1>Menu</h1>
+					<input type="checkbox" id="ga_ui_swapicon" name="ga_ui_swapicon"> Swap ⇌ with ╱ on the song select
+					<br>
+					<div class="smalltext">
+						A personal preference tweak. ╱ is more akin to what is used in music uploads rather than ⇌ which is more distinct.
+						<br>
+						<i>Boolean</i>
+					</div>
+				</div>
+			</div>
+			
+			<div class="row">
+				<div class="col-12" style="text-align:center">
+					<br>
+					<button type="button" onclick="patchXML()">PATCH</button>
+					<br>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>
