@@ -70,6 +70,24 @@ function _patchAttributes(file){
 	// Use checkpoint debug
 	currentXML.ATTRIBUTES.Attribute[_seek(currentXML, "s_bUseCheckpointDebug")].Value = _valueToXML(document.getElementById("ga_ig_cpdebug").checked, "bool")
 
+	// Use gem debug
+	currentXML.ATTRIBUTES.Attribute[_seek(currentXML, "g_bShowGemGeometry")].Value = _valueToXML(document.getElementById("ga_ig_gem_debug").checked, "bool")
+
+	// Gem height
+	currentXML.ATTRIBUTES.Attribute[_seek(currentXML, "g_f3DGemHeight")].Value = _valueToXML(document.getElementById("ga_ig_gem_height").value, "float")
+
+	// Gem radius
+	currentXML.ATTRIBUTES.Attribute[_seek(currentXML, "g_f3DGemWidth")].Value = _valueToXML(document.getElementById("ga_ig_gem_radius").value, "float")
+
+	// Euhporia radius
+	currentXML.ATTRIBUTES.Attribute[_seek(currentXML, "g_f3DGemCollarScale")].Value = _valueToXML(document.getElementById("ga_ig_gem_euphoriaradius").value, "float")
+
+	// Scratch radius
+	currentXML.ATTRIBUTES.Attribute[_seek(currentXML, "g_f3DScratchGemRadius")].Value = _valueToXML(document.getElementById("ga_ig_gem_scratchradius").value, "float")
+
+	// Inner radius
+	currentXML.ATTRIBUTES.Attribute[_seek(currentXML, "g_f3DGemWidthStep")].Value = _valueToXML(document.getElementById("ga_ig_gem_innerradius").value, "float")
+
 	// Flip deck (Buttons left)
 	currentXML.ATTRIBUTES.Attribute[_seek(currentXML, "g_abDeckFlip[0]")].Value = _valueToXML(document.getElementById("ga_ig_flipleft").checked, "bool")
 
@@ -81,6 +99,9 @@ function _patchAttributes(file){
 
 	// Menu swap icon
 	currentXML.ATTRIBUTES.Attribute[_seek(currentXML, "g_bUseWiggleIconForVersus")].Value = _valueToXML(document.getElementById("ga_ui_swapicon").checked, "bool")
+
+	// Menu dropshadows
+	currentXML.ATTRIBUTES.Attribute[_seek(currentXML, "g_bShadowAllText")].Value = _valueToXML(document.getElementById("ga_ui_dropshadoweverywhere").checked, "bool")
 
 	// Now save the file
 	

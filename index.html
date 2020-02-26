@@ -45,9 +45,13 @@
 					<!-- In-game -->
 
 					<h1>In-Game</h1>
-					DivideMod (For Deckspeed)<input type="ga_ig_dividemod" id="ga_ig_dividemod" name="input" value="2">
+					<div class="smalltext">
+						<i>Tweaks relating to gameplay UI.</i>
+					</div>
 					<br>
 
+					DivideMod (For Deckspeed)<input type="ga_ig_dividemod" id="ga_ig_dividemod" name="input" value="2">
+					<br>
 					<div class="smalltext">
 						DivideMod is similar to xmod but divides instead of multiplies deck speed. It defaults to half speed (2), so to get an xmod from it you can do 2 divided by your desired xmod.
 						<br>
@@ -82,6 +86,67 @@
 						<br>
 						<i>Boolean</i>
 					</div>
+					<br>
+
+					<h2>Gems</h2>
+					<div class="smalltext">
+						<i>Tweaks relating to 'gems', ie the notes on the highway.</i>
+					</div>
+					<br>
+
+					<input type="checkbox" id="ga_ig_gem_debug" name="ga_ig_gem_debug"> Use debug rendering
+					<br>
+					<div class="smalltext">
+						Debug rendering turns gems into stacks of coloured squares representing the geometry.
+						<br>
+						<i>Boolean</i>
+					</div>
+					<br>
+
+					Gem height<input type="ga_ig_gem_height" id="ga_ig_gem_height" name="input" value="0.009">
+					<br>
+					<div class="smalltext">
+						Gem height is the height the gem renders at. Keep in mind that gems <b>are made of layers</b> so setting this really high will just split the layers really far.
+						<br>
+						<i>Float</i>
+					</div>
+					<br>
+
+					Gem radius<input type="ga_ig_gem_radius" id="ga_ig_gem_radius" name="input" value="0.055">
+					<br>
+					<div class="smalltext">
+						Gem radius is the width of gems, a higher radius will be wider and etc.
+						<br>
+						<i>Float</i>
+					</div>
+					<br>
+
+					Euphoria gem glow size<input type="ga_ig_gem_euphoriaradius" id="ga_ig_gem_euphoriaradius" name="input" value="0.098">
+					<br>
+					<div class="smalltext">
+						During euphoria, gems have a white glow below them. Use this to adjust the size of the glow.
+						<br>
+						<i>Float</i>
+					</div>
+					<br>
+
+					Scratch icon radius<input type="ga_ig_gem_scratchradius" id="ga_ig_gem_scratchradius" name="input" value="0.045">
+					<br>
+					<div class="smalltext">
+						This changes the radius of the 🜂, 🜄, ⇑, ⇓ and ⥮ icons in scratchzones. Does not affect the one at the start of a freestyle scratch zone.
+						<br>
+						<i>Float</i>
+					</div>
+					<br>
+
+					Gem inner ring width<input type="ga_ig_gem_innerradius" id="ga_ig_gem_innerradius" name="input" value="0.004">
+					<br>
+					<div class="smalltext">
+						This changes the size of the upper portion of the gem. Presumably in proportion to the standard radius.
+						<br>
+						<i>Float</i>
+					</div>
+					<br>
 
 					<!-- Audio -->
 
@@ -101,6 +166,15 @@
 					<br>
 					<div class="smalltext">
 						A personal preference tweak. ╱ is more akin to what is used in music uploads rather than ⇌ which is more distinct.
+						<br>
+						<i>Boolean</i>
+					</div>
+					<br>
+
+					<input type="checkbox" id="ga_ui_dropshadoweverywhere" name="ga_ui_dropshadoweverywhere"> Apply drop shadows to every piece of text in the menu
+					<br>
+					<div class="smalltext">
+						Can up the contrast of white pieces of text if you have trouble reading them, however makes black text much harder to read. Only applies to the main menu.
 						<br>
 						<i>Boolean</i>
 					</div>
