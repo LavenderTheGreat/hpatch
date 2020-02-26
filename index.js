@@ -42,9 +42,12 @@ function _seek(array, varname){
 function _valueToXML(value, type){
 	switch(type){
 		case "bool":
+			console.log(value)
 			if (value){
+				console.log("TRUE")
 				return "TRUE"
 			} else {
+				console.log("FALSE")
 				return "FALSE"
 			}
 		case "float":
@@ -65,27 +68,27 @@ function _patchAttributes(file){
 	currentXML.ATTRIBUTES.Attribute[_seek(currentXML, "g_f3DHighwayRadiusAdjust")].Value = _valueToXML(document.getElementById("ga_ig_highwaywidth").value, "float")
 
 	// Use checkpoint debug
-	currentXML.ATTRIBUTES.Attribute[_seek(currentXML, "s_bUseCheckpointDebug")].Value = _valueToXML(document.getElementById("ga_ig_cpdebug").value, "bool")
+	currentXML.ATTRIBUTES.Attribute[_seek(currentXML, "s_bUseCheckpointDebug")].Value = _valueToXML(document.getElementById("ga_ig_cpdebug").checked, "bool")
 
 	// Flip deck (Buttons left)
-	currentXML.ATTRIBUTES.Attribute[_seek(currentXML, "g_abDeckFlip[0]")].Value = _valueToXML(document.getElementById("ga_ig_flipleft").value, "bool")
+	currentXML.ATTRIBUTES.Attribute[_seek(currentXML, "g_abDeckFlip[0]")].Value = _valueToXML(document.getElementById("ga_ig_flipleft").checked, "bool")
 
 	// Flip deck (Buttons right)
-	currentXML.ATTRIBUTES.Attribute[_seek(currentXML, "g_abDeckFlip[1]")].Value = _valueToXML(document.getElementById("ga_ig_flipright").value, "bool")
+	currentXML.ATTRIBUTES.Attribute[_seek(currentXML, "g_abDeckFlip[1]")].Value = _valueToXML(document.getElementById("ga_ig_flipright").checked, "bool")
 
 	// Freestyle samples
-	currentXML.ATTRIBUTES.Attribute[_seek(currentXML, "g_bPlayFreestyleSample")].Value = _valueToXML(document.getElementById("ga_au_freestyle").value, "bool")
+	currentXML.ATTRIBUTES.Attribute[_seek(currentXML, "g_bPlayFreestyleSample")].Value = _valueToXML(document.getElementById("ga_au_freestyle").checked, "bool")
 
 	// Menu swap icon
-	currentXML.ATTRIBUTES.Attribute[_seek(currentXML, "g_bUseWiggleIconForVersus")].Value = _valueToXML(document.getElementById("ga_ui_swapicon").value, "bool")
+	currentXML.ATTRIBUTES.Attribute[_seek(currentXML, "g_bUseWiggleIconForVersus")].Value = _valueToXML(document.getElementById("ga_ui_swapicon").checked, "bool")
 
 	// Now save the file
 	
-	var parserJ2X = new parser.j2xParser();
+	var parserJ2X = new parser.j2xParser({format: true, indentBy: "	"});
 
-	console.log(parserJ2X.parse(currentXML))
+	console.log( ('<?xml version="1.0" encoding="UTF-8"?>\n').concat(parserJ2X.parse(currentXML)) )
 
-	var blob = new Blob([parserJ2X.parse(currentXML)], {type: "text/xml"});
+	var blob = new Blob([ ('<?xml version="1.0" encoding="UTF-8"?>\n').concat(parserJ2X.parse(currentXML)) ], {type: "text/xml"});
 	saveAs(blob, "ATTRIBUTES_GLOBAL.XML");
 }
 
@@ -94,6 +97,7 @@ function _fail(){
 }
 
 function patchXML(){
+	
 	console.log(_numberToFloat(0.1))
 	console.log(_numberToInt32(65))
 	
