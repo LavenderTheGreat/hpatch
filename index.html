@@ -28,6 +28,9 @@
 					Currently has various tweaks for the global variable XML file, which allows various tweaks to gameplay, display and audio effects.
 					<br>
 					<br>
+					<div class="smalltext" style="text-align:center"><i>Need help? <a href="https://discord.gg/PWE5GT2"><b>Join the DJ Hero Discord!</b></a></i></div>
+					<br>
+					<br>
 					XML file to patch:
 					<br>
 					<input type="file" id="input" name="input" accept="text/xml">
@@ -94,7 +97,7 @@
 					<!-- Menu -->
 
 					<h1>Menu</h1>
-					<input type="checkbox" id="ga_ui_swapicon" name="ga_ui_swapicon"> Swap ⇌ with ╱ on the song select
+					<input type="checkbox" id="ga_ui_swapicon" name="ga_ui_swapicon" checked=true> Use ⇌ instead of ╱ on the song select
 					<br>
 					<div class="smalltext">
 						A personal preference tweak. ╱ is more akin to what is used in music uploads rather than ⇌ which is more distinct.
@@ -108,7 +111,27 @@
 				<div class="col-12" style="text-align:center">
 					<br>
 					<button type="button" onclick="patchXML()">PATCH</button>
-					<br>
+					<br><br>
+					<div class="smalltext"><i>HPATCH has been made possible due to the efforts of: 
+						<a href="https://github.com/shockdude"><b>Shockdude (Filetype research)</b></a>, 
+						<a href="https://soundcloud.com/jummy0"><b>Jummy (Attributes research)</b></a> and 
+						<a href="https://twitter.com/lavendertgreat"><b>Lavenfurr (Website creator)</b></a>
+					</i>
+					<br><br>
+					<i>HPATCH uses the following technology: 
+						<a href="https://github.com/jenil/chota"><b>Chota (For CSS)</b></a>, 
+						<a href="https://github.com/eligrey/FileSaver.js/pull/629"><b>FileSaver.js (E-train-liu PR, for XML downloading)</b></a>,
+						<a href="https://github.com/NaturalIntelligence/fast-xml-parser"><b>Fast XML Parser (For XML tweaking)</b></a>, 
+						<a href="https://unpkg.com"><b>UnPKG</b></a> and 
+						<a href="https://cdnjs.com"><b>cdnJS</b></a>
+						
+					</i>
+					<br><br>
+					<i>The licenses for this technology can be found at  
+						<a href="https://github.com/lavendertgreat/hpatch/licences"><b>hpatch/licences</b></a>
+					</i>
+					<br><br>
+					<i>DJ Hero is Copyright (c) FreeStyleGames and Activision 2010</i>
 				</div>
 			</div>
 		</div>
