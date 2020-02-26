@@ -59,7 +59,7 @@ function _valueToXML(value, type){
 }
 
 function _patchAttributes(file){
-	var currentXML = parser.parse(file.target.result)
+	var currentXML = parser.parse(file.target.result, {parseNodeValue: false})
 
 	// Divide mod
 	currentXML.ATTRIBUTES.Attribute[_seek(currentXML, "g_fTimeIntoDistance")].Value = _valueToXML(document.getElementById("ga_ig_dividemod").value, "float")
