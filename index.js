@@ -42,12 +42,12 @@ function _seek(array, varname){
 function _valueToXML(value, type){
 	switch(type){
 		case "bool":
-			console.log(value)
+			//console.log(value)
 			if (value){
-				console.log("TRUE")
+				//console.log("TRUE")
 				return "TRUE"
 			} else {
-				console.log("FALSE")
+				//console.log("FALSE")
 				return "FALSE"
 			}
 		case "float":
@@ -107,7 +107,7 @@ function _patchAttributes(file){
 	
 	var parserJ2X = new parser.j2xParser({format: true, indentBy: "	"});
 
-	console.log( ('<?xml version="1.0" encoding="UTF-8"?>\n').concat(parserJ2X.parse(currentXML)) )
+	//console.log( ('<?xml version="1.0" encoding="UTF-8"?>\n').concat(parserJ2X.parse(currentXML)) )
 
 	var blob = new Blob([ ('<?xml version="1.0" encoding="UTF-8"?>\n').concat(parserJ2X.parse(currentXML)) ], {type: "text/xml"});
 	saveAs(blob, "ATTRIBUTES_GLOBAL.XML");
@@ -122,7 +122,7 @@ function patchXML(){
 	console.log(_numberToFloat(0.1))
 	console.log(_numberToInt32(65))
 	
-	console.log("BUTTON")
+	//console.log("BUTTON")
 	var file = document.getElementById("input").files[0]
 	var reader = new FileReader()
 	reader.onload = _patchAttributes
