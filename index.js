@@ -70,6 +70,9 @@ function _patchAttributes(file){
 	// Use checkpoint debug
 	currentXML.ATTRIBUTES.Attribute[_seek(currentXML, "s_bUseCheckpointDebug")].Value = _valueToXML(document.getElementById("ga_ig_cpdebug").checked, "bool")
 
+	// Use running percent
+	currentXML.ATTRIBUTES.Attribute[_seek(currentXML, "s_bRenderRunningPercentage")].Value = _valueToXML(document.getElementById("ga_ig_rpercent").checked, "bool")
+
 	// Use gem debug
 	currentXML.ATTRIBUTES.Attribute[_seek(currentXML, "g_bShowGemGeometry")].Value = _valueToXML(document.getElementById("ga_ig_gem_debug").checked, "bool")
 
